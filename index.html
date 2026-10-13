@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#101827">
+  <meta name="application-name" content="CSV JSON Studio">
+  <meta name="description" content="Convert CSV to JSON or JSON to CSV online for free. Preview, validate, copy, and download data locally in your browser—no uploads or account required.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>CSV to JSON Converter &amp; JSON to CSV | Free</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CSV to JSON Converter &amp; JSON to CSV | Free">
+  <meta property="og:description" content="Convert CSV to JSON and JSON to CSV in your browser. Configure delimiters, preview output, and copy or download results without uploading your data.">
+  <meta property="og:site_name" content="CSV JSON Studio">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CSV to JSON Converter &amp; JSON to CSV">
+  <meta name="twitter:description" content="A free, open-source CSV and JSON converter with local browser processing, flexible delimiters, and downloadable output.">
+  <script>
+    // Add a self-referencing canonical URL on the deployed site. Keeping it dynamic
+    // avoids publishing a guessed GitHub Pages username or repository path.
+    (function () {
+      if (!/^https?:$/.test(window.location.protocol) || /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)) return;
+      var canonicalUrl = new URL(window.location.href);
+      canonicalUrl.search = '';
+      canonicalUrl.hash = '';
+      var canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      canonical.href = canonicalUrl.href;
+      document.head.appendChild(canonical);
+    }());
+  </script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CSV JSON Studio",
+    "description": "A free browser-based tool for converting CSV to JSON and JSON to CSV, with configurable delimiters, file import, clipboard copy, and downloads.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any device with a modern web browser",
+    "browserRequirements": "JavaScript enabled",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": [
+      "CSV to JSON conversion",
+      "JSON to CSV conversion",
+      "CSV delimiter selection and detection",
+      "Optional CSV headers",
+      "Import local files and download converted output",
+      "Local browser processing without an application backend"
+    ]
+  }
+  </script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to converter</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="CSV JSON Studio home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="2" y="3" width="12" height="26" rx="3"/><rect x="18" y="3" width="12" height="26" rx="3"/><path d="M5 10h6M5 16h6M5 22h6M21 10h6M21 16h6M21 22h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <span>CSV<span class="brand-accent">↔</span>JSON <small>STUDIO</small></span>
+    </a>
+    <nav class="top-actions" aria-label="Main actions">
+      <a class="nav-link" href="#how-it-works">How it works</a>
+      <a class="nav-link" href="#faqs">FAQs</a>
+      <a class="github-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub repository (update this link before publishing)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.68-3.75-1.31-3.75-1.31-.5-1.28-1.24-1.62-1.24-1.62-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.1-1.45 3.04-1.15 3.04-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3 0 4.29-2.62 5.24-5.11 5.51.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg><span>Open source</span></a>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme"><svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 15.2A8.8 8.8 0 0 1 8.8 3.2 8.9 8.9 0 1 0 20.8 15.2Z"/></svg></button>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow"><span class="live-dot"></span> DEVELOPER UTILITY <span class="eyebrow-sep">/</span> 100% IN-BROWSER</div>
+      <h1 id="page-title">CSV to JSON <span>and back again.</span></h1>
+      <p class="hero-copy">Convert CSV to JSON or JSON to CSV in seconds. No uploads, no sign-up, no fuss — just clean data, ready to use.</p>
+      <div class="trust-row"><span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5 16 5v4.6c0 3.8-2.5 6.4-6 7.9-3.5-1.5-6-4.1-6-7.9V5l6-2.5Z"/><path d="m7 9.8 2 2 4-4"/></svg>Local processing</span><span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3h12v14H4zM7 6h6M7 9h6M7 12h3"/></svg>Open source</span><span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5v3m0 9v3M2.5 10h3m9 0h3M4.7 4.7l2.1 2.1m6.4 6.4 2.1 2.1m0-10.6-2.1 2.1m-6.4 6.4-2.1 2.1"/><circle cx="10" cy="10" r="4"/></svg>Free forever</span></div>
+    </section>
+
+    <section class="workspace" id="workspace" aria-label="Data converter">
+      <div class="workspace-head">
+        <div class="mode-switch" role="group" aria-label="Conversion direction">
+          <button class="mode-button active" id="mode-csv-json" type="button" aria-pressed="true"><span class="file-type csv-type">CSV</span><span class="mode-arrow">→</span><span class="file-type json-type">JSON</span></button>
+          <button class="mode-button" id="mode-json-csv" type="button" aria-pressed="false"><span class="file-type json-type">JSON</span><span class="mode-arrow">→</span><span class="file-type csv-type">CSV</span></button>
+        </div>
+        <div class="workspace-tools"><span class="keyboard-hint"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> to convert</span><button class="text-button" id="load-sample" type="button">Load sample <span aria-hidden="true">↗</span></button></div>
+      </div>
+      <div class="panels">
+        <section class="editor-panel" aria-labelledby="input-title">
+          <div class="panel-heading"><div><span class="step-number">01</span><h2 id="input-title">Input <span id="input-format">CSV</span></h2></div><div class="panel-meta" id="input-meta">Paste or type your data</div></div>
+          <div class="editor-wrap"><label class="sr-only" for="source-input">Source data</label><textarea id="source-input" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="Paste your CSV data here…" aria-describedby="input-help"></textarea><div class="editor-gutter" aria-hidden="true"><span id="line-count">1 line</span><span id="char-count">0 chars</span></div></div>
+          <div class="panel-footer"><span class="input-status" id="input-status"><span class="status-dot"></span><span id="input-help">Ready for input</span></span><div class="footer-actions"><button class="small-button" id="clear-input" type="button">Clear</button><label class="small-button file-label" for="file-input">Import file</label><input class="sr-only" id="file-input" type="file" accept=".csv,.tsv,.txt,.json,text/csv,text/plain,application/json"></div></div>
+          <div class="options-row" id="csv-options"><label class="option-label" for="delimiter-select">Delimiter</label><select id="delimiter-select" aria-label="CSV delimiter"><option value="auto">Auto-detect</option><option value=",">Comma ,</option><option value=";">Semicolon ;</option><option value="\t">Tab</option><option value="|">Pipe |</option></select><label class="check-option"><input id="has-headers" type="checkbox" checked> First row is headers</label></div>
+        </section>
+        <div class="convert-rail"><button class="convert-button" id="convert-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h13m-4-4 4 4-4 4M19 17H6m4-4-4 4 4 4"/></svg><span>Convert</span><kbd>↵</kbd></button><div class="rail-note">Instant<br>conversion</div></div>
+        <section class="editor-panel output-panel" aria-labelledby="output-title">
+          <div class="panel-heading"><div><span class="step-number output-step">02</span><h2 id="output-title">Output <span id="output-format">JSON</span></h2></div><div class="output-actions"><button class="small-button" id="copy-output" type="button" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="6" width="9" height="11" rx="1.5"/><path d="M12 6V4.5A1.5 1.5 0 0 0 10.5 3h-6A1.5 1.5 0 0 0 3 4.5v8A1.5 1.5 0 0 0 4.5 14H7"/></svg>Copy</button><button class="small-button download-button" id="download-output" type="button" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5v10m-4-4 4 4 4-4M3.5 14v2A1.5 1.5 0 0 0 5 17.5h10a1.5 1.5 0 0 0 1.5-1.5v-2"/></svg>Download</button></div></div>
+          <div class="editor-wrap output-wrap"><label class="sr-only" for="result-output">Converted output</label><textarea id="result-output" spellcheck="false" readonly placeholder="Your converted data will appear here…" aria-describedby="output-help"></textarea><div class="editor-gutter"><span id="output-lines">0 lines</span><span id="output-chars">0 chars</span></div></div>
+          <div class="panel-footer"><span class="input-status" id="output-status"><span class="status-dot"></span><span id="output-help" role="status" aria-live="polite">Waiting for conversion</span></span><span class="format-badge" id="format-badge">JSON</span></div>
+          <div class="options-row output-options"><label class="option-label" for="json-format">JSON format</label><select id="json-format" aria-label="JSON output formatting"><option value="pretty">Pretty printed</option><option value="compact">Compact</option></select><span class="option-spacer"></span><span class="output-note" id="output-note">UTF-8 text</span></div>
+        </section>
+      </div>
+      <div class="notice" id="error-notice" role="alert" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 6v4m0 3h.01"/></svg><span id="error-message"></span></div>
+      <div class="success-strip" id="success-strip" hidden><span class="success-icon">✓</span><span id="success-message">Conversion complete</span><button id="dismiss-success" type="button" aria-label="Dismiss message">×</button></div>
+    </section>
+
+    <section class="features" aria-label="Tool benefits"><article class="feature"><span class="feature-icon purple"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.3 2.3 4.7-5"/></svg></span><div><h3>Your data stays yours</h3><p>Everything runs locally in your browser. Your files and pasted data are never uploaded.</p></div></article><article class="feature"><span class="feature-icon blue"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h4"/></svg></span><div><h3>Made for real-world data</h3><p>Handles quoted fields, commas inside values, line breaks, custom delimiters and JSON arrays.</p></div></article><article class="feature"><span class="feature-icon green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 10-13h-7z"/></svg></span><div><h3>Fast, focused, no clutter</h3><p>No accounts or setup. Convert, copy or download a clean result in a few clicks.</p></div></article></section>
+
+    <section class="how-section" id="how-it-works"><div class="section-kicker">SIMPLE BY DESIGN</div><h2>From raw data to ready-to-use.</h2><div class="steps"><article><span>1</span><h3>Paste or import</h3><p>Drop your CSV or JSON into the editor, or load a local file from your device.</p></article><article><span>2</span><h3>Choose your format</h3><p>Switch conversion direction and adjust headers, delimiter, or output formatting.</p></article><article><span>3</span><h3>Copy or download</h3><p>Validate the result, copy it to your clipboard, or save it as a file.</p></article></div></section>
+    <section class="seo-content" aria-labelledby="csv-json-guide-title">
+      <div class="section-kicker">CSV &amp; JSON GUIDE</div>
+      <h2 id="csv-json-guide-title">Convert CSV and JSON online</h2>
+      <p>CSV JSON Studio is a free <strong>CSV to JSON converter</strong> and <strong>JSON to CSV converter</strong> for developers, analysts, students, and anyone moving tabular data between tools. Paste data or import a local file, choose the conversion direction, and copy or download the result. Conversion runs in your browser, so the input does not need to be uploaded to a conversion server.</p>
+
+      <h3>What is the difference between CSV and JSON?</h3>
+      <p><strong>CSV (comma-separated values)</strong> stores tabular data as rows and columns, making it common for spreadsheets, reports, and database exports. <strong>JSON (JavaScript Object Notation)</strong> represents structured data using arrays and objects, so it is widely used by APIs and web applications. Converting between them helps when a spreadsheet export needs to feed an application, or when structured records need to be opened in a spreadsheet workflow.</p>
+
+      <div class="guide-grid">
+        <article class="guide-card"><h3>CSV to JSON</h3><p>Turn rows from a CSV file into a JSON array. When the first row contains column names, each record becomes an object with those names as keys. Disable the header option when your CSV has no column-name row; records will be represented as arrays instead.</p></article>
+        <article class="guide-card"><h3>JSON to CSV</h3><p>Convert an array of JSON objects into spreadsheet-friendly rows. The converter combines keys found across object records into a shared column set. Nested objects and arrays are serialized into JSON text inside their corresponding CSV cells.</p></article>
+      </div>
+
+      <h3>Useful for API data, spreadsheets, and development</h3>
+      <p>Use this converter when preparing sample API payloads, reshaping exported records, moving test data between scripts and spreadsheets, or inspecting structured data during development. Automatic delimiter detection supports common comma, semicolon, tab, and pipe-separated input, and you can select a delimiter manually when your file uses a specific format.</p>
+
+      <h3>Data handling and conversion notes</h3>
+      <ul class="guide-list">
+        <li><strong>Local processing:</strong> the conversion logic runs in the current browser tab; your pasted content and imported file are not sent to a conversion backend.</li>
+        <li><strong>CSV values:</strong> values are kept as text rather than automatically interpreted as numbers, booleans, dates, or nulls. This helps preserve values such as IDs with leading zeros.</li>
+        <li><strong>Quoted fields:</strong> commas, escaped quotation marks, and line breaks inside quoted CSV cells are supported.</li>
+        <li><strong>Different object keys:</strong> JSON records with different keys use a combined set of CSV columns; missing values produce empty cells.</li>
+        <li><strong>Review before using:</strong> conversion changes the data representation, not the meaning or correctness of your records. Check the output before importing it into a production system.</li>
+      </ul>
+
+      <h3>More free developer tools from AabiTech</h3>
+      <p>If you are working with data formats or API payloads, these related utilities may help with the next step in your workflow:</p>
+      <div class="related-tools">
+        <a href="https://aabitech.com/tools/json-formatter-validator"><span class="related-tool-name">JSON Formatter &amp; Validator</span><span>Format JSON with readable indentation and check whether the syntax is valid.</span><span class="related-arrow" aria-hidden="true">↗</span></a>
+        <a href="https://aabitech.com/tools/yaml-to-json-converter"><span class="related-tool-name">YAML to JSON Converter</span><span>Convert YAML configuration or structured text into JSON for apps and APIs.</span><span class="related-arrow" aria-hidden="true">↗</span></a>
+        <a href="https://aabitech.com/tools/base64-encoder-decoder"><span class="related-tool-name">Base64 Encoder &amp; Decoder</span><span>Encode or decode Base64 strings when inspecting data exchanged by web applications.</span><span class="related-arrow" aria-hidden="true">↗</span></a>
+        <a href="https://aabitech.com/tools/url-encoder-decoder"><span class="related-tool-name">URL Encoder &amp; Decoder</span><span>Encode or decode URL components when preparing query parameters and API requests.</span><span class="related-arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faqs" aria-labelledby="faq-title">
+      <div class="section-kicker">QUICK ANSWERS</div>
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>How do I convert CSV to JSON?</summary><p>Choose CSV → JSON, paste your CSV or import a local file, select the delimiter (or leave it on Auto-detect), and choose whether the first row contains headers. Press Convert, then copy the JSON or download it as a file.</p></details>
+        <details><summary>How do I convert JSON to CSV?</summary><p>Choose JSON → CSV, paste a JSON array of objects or arrays, and press Convert. For object arrays, keys become column headings. You can copy the CSV output or download it for use in a spreadsheet or another application.</p></details>
+        <details><summary>Is this CSV to JSON converter free?</summary><p>Yes. CSV JSON Studio is free to use in a modern browser. No account, subscription, or installation is required.</p></details>
+        <details><summary>Is my data uploaded or stored?</summary><p>The conversion runs locally in your browser tab. This tool does not send your input to a conversion server or intentionally save it to an online account. Your browser, extensions, or device may have their own behavior, so avoid using a shared or compromised device for sensitive information.</p></details>
+        <details><summary>Can I convert CSV files with commas or line breaks inside a cell?</summary><p>Yes. Properly quoted CSV fields can contain delimiters, escaped double quotes, and line breaks. If a file uses a non-comma separator, select the matching delimiter in the options.</p></details>
+        <details><summary>Does the converter preserve numbers, dates, and leading zeros?</summary><p>CSV cells are treated as text, so the converter does not guess types or automatically turn values into numbers, dates, booleans, or nulls. This helps preserve strings such as product codes and IDs that begin with zero.</p></details>
+        <details><summary>What JSON structure can I convert to CSV?</summary><p>Use a top-level array containing objects with key-value pairs or rows represented as arrays. JSON objects with different keys are mapped to a shared set of columns. Nested objects and arrays are written as JSON text inside a cell.</p></details>
+        <details><summary>Can I use the tool offline?</summary><p>After the page and its assets have loaded, conversion itself does not require a conversion API. For a fully offline setup with no external font request, remove the optional Google Fonts import from the stylesheet and keep the project files on your device.</p></details>
+      </div>
+    </section>
+
+    <footer class="site-footer"><a class="footer-brand" href="#top">CSV<span>↔</span>JSON Studio</a><p>Free to use. Open to improve. Built for the web.</p><div class="footer-links"><a href="README.md">Documentation</a><a href="LICENSE">MIT License</a><a href="https://github.com/" target="_blank" rel="noreferrer">Contribute on GitHub</a><a href="https://aabitech.com/tools">More free tools from AabiTech</a></div><p class="privacy-note"><span class="live-dot"></span> No backend. No tracking. Your data stays in this tab.</p></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
